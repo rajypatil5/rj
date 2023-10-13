@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label, input, select {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Registration Form</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="id_Designation">Designation:</label>
+            <select name="Designation" id="id_Designation">
+                <option value="ST">Student</option>
+                <option value="EM">Employee</option>
+            </select>
+
+            <label for="id_Name">Name:</label>
+            <input type="text" name="Name" id="id_Name">
+
+            <label for="id_Email">Email:</label>
+            <input type="email" name="Email" id="id_Email">
+
+            <label for="id_Mobile">Mobile:</label>
+            <input type="number" name="Mobile" id="id_Mobile">
+
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>
